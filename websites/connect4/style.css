@@ -1,0 +1,165 @@
+html {
+  box-sizing: border-box;
+  background-color: #eee;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  margin: 40px auto;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgb(41, 87, 238);
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  position: relative;
+
+}
+
+.square:hover {
+  background-color: #dddddd;
+}
+
+.gameOver .square:hover,
+.square.red:hover,
+.square.blue:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+.square .outline {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58px;
+  width: 57px;
+}
+
+.square .foreground {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58px;
+  width: 57px;
+}
+
+.square.blue .outline:before {
+  content: "";
+  background: transparent;
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  border-radius: 100%;
+  border: 24px solid black;
+  z-index: 2;
+}
+
+.square.blue .foreground:after {
+  content: "";
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  border-radius: 100%;
+  border: 22px solid #6687f1;
+  z-index: 3;
+}
+
+.square.red .outline:before {
+  content: "";
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 100%;
+  border: 24px solid black;
+  z-index: 2;
+}
+
+.square.red .foreground:after {
+  content: "";
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  border-radius: 100%;
+  border: 22px solid #d18181;
+  z-index: 3;
+}
+
+
+.square:nth-of-type(1),
+.square:nth-of-type(2),
+.square:nth-of-type(3),
+.square:nth-of-type(4),
+.square:nth-of-type(5),
+.square:nth-of-type(6),
+.square:nth-of-type(7) {
+  border-top: 3px solid rgb(41, 87, 238); 
+}
+
+.square:nth-of-type(1),
+.square:nth-of-type(8),
+.square:nth-of-type(15),
+.square:nth-of-type(22),
+.square:nth-of-type(29),
+.square:nth-of-type(36),
+.square:nth-of-type(43) {
+  border-left: 3px solid rgb(41, 87, 238); 
+}
+
+.square:nth-of-type(7),
+.square:nth-of-type(14),
+.square:nth-of-type(21),
+.square:nth-of-type(28),
+.square:nth-of-type(35),
+.square:nth-of-type(42),
+.square:nth-of-type(49) {
+  border-right: 3px solid rgb(41, 87, 238); 
+}
+
+.square:nth-of-type(43),
+.square:nth-of-type(44),
+.square:nth-of-type(45),
+.square:nth-of-type(46),
+.square:nth-of-type(47),
+.square:nth-of-type(48),
+.square:nth-of-type(49) {
+  border-bottom: 3px solid rgb(41, 87, 238); 
+}
+
+button {
+  background-color: #008888;
+  color: white;
+  border: none;
+  padding: 15px 18px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .76), 0 2px 5px rgba(0, 0, 0, .36);
+  transition: 0.2s ease-out box-shadow;
+  cursor: pointer;
+}
+
+button:hover {
+    background-color: #009999;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .76), 0 5px 10px rgba(0, 0, 0, .36) ;
+}
+
