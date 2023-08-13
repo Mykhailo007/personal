@@ -88,10 +88,10 @@ const questions = [
   {
     question: "Who's the best?",
     answers: [
-      { text :" Khacoolkid ", correct :true},
+      { text :" Khacoolkid ", correct :false},
       { text :" KSIOlajideBT ", correct:false},
       { text :" Riko ", correct:false},
-      { text :" your mom ", correct:false}
+      { text :" your mom ", correct:true}
     ]
   },
   {
